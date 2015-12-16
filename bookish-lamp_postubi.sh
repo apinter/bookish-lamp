@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y
 ####################################################################
 ## Install every cool stuff
 
-apt-get install aptitude vlc skype virtualbox chromium-browser epiphany-browser numix-gtk-theme numix-icon-theme-circle numix-wallpaper* mc git build-essential gcc oracle-java8-installer docker vagrant gimp inkscape okular scribus geary owncloud ufw gufw uget baobab gparted  p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller ffmpeg gstreamer0.10-plugins-ugly gxine libdvdread4 icedax tagtool easytag id3tool lame libxine2-ffmpeg nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra gstreamer1.0-libav ubuntu-restricted-extras buntu-restricted-addons -y 
+apt-get install aptitude vlc skype virtualbox chromium-browser epiphany-browser numix-gtk-theme numix-icon-theme-circle numix-wallpaper* mc git build-essential gcc oracle-java8-installer docker vagrant gimp inkscape okular scribus geary owncloud ufw gufw uget baobab gparted  p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller ffmpeg gstreamer0.10-plugins-ugly gxine libdvdread4 icedax tagtool easytag id3tool lame libxine2-ffmpeg nautilus-script-audio-convert libmad0 mpg321 libavcodec-extra gstreamer1.0-libav ubuntu-restricted-extras ubuntu-restricted-addons -y 
 
 ## Download and install Atom
 cd ~/Downloads
