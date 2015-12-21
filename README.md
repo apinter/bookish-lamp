@@ -84,6 +84,6 @@ to cron:
         0 5 1 * * /home/user/bookish-lamp_bk.sh
 3. Save it and quit
 
-##Known bugs
+###Known bugs
 
-##What's next?
+###What's next?
