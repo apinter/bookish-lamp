@@ -10,16 +10,17 @@ Attila Pinter
 
 ##File List
 
-bookish-lamp_bk.sh - General backup 
+bookish-lamp_bk.sh 
 
-bookish-lamp_postubi.sh - Ubuntu and derivatives post-installation
+bookish-lamp_postubi.sh
 
-bookish-lamp_swap.sh - Swappiness and cache config
+bookish-lamp_swap.sh
 
-bookish-lamp_sqlitefix.sh - Malformed sqlite db fix
+bookish-lamp_sqlitefix.sh
 
-README.md - This document
+README.md
 
+LICENSE
 
 ##About
 
