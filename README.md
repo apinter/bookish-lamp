@@ -43,7 +43,7 @@ graphic softwares, browsers, Skype, Atom etc.
 It's a simple way of getting started or adding/removing the apps you like to have on your desktop.
 
 Before running it just make sure the file is executable, if not just type: chmod +x bookish-lamp_postubi.sh.
-You need to run it with sudo: sudo ./bookish-lamp_postubi.sh
+You need to run it with sudo: ```sudo ./bookish-lamp_postubi.sh```
 
 
 ###II. bookish-lamp_swap.sh
@@ -52,7 +52,7 @@ Swap is simply changes the swappiness and caching settings to use the swap as le
 since using the swap can be pretty expensive.
 
 Before running it just make sure the file is executable, if not just type: chmod +x bookish-lamp_swap.sh.
-You need to run it with sudo: sudo ./bookish-lamp_swap.sh
+You need to run it with sudo: ```sudo ./bookish-lamp_swap.sh```
 
 
 ###III. bookish-lamp_bk.sh
@@ -62,14 +62,14 @@ can be modified and add or exclude as many items you want. This particular app r
 (in my case) and it looks for my external HDD to be connected. Usually before closing the day I just
 plug in the disk and bk will do it's job once recognize that the disk is connected.
 This might actually won't work with Debian based systems, but works great with Arch and Fedora.
-YOu might need to modify the mount point to /media/username
+You might need to modify the mount point to /media/username.
 
-Before running it just make sure the file is executable, if not just type: chmod +x bookish-lamp_nk.sh.
+Before running it just make sure the file is executable, if not just type: ```chmod +x bookish-lamp_bk.sh```.
 You can run it manually - not much fun in that - or add to cron like this:
-1. Edit crontab: crontab -u user -e
-2. Add the following line to your cronjob:
-	* * * * * /home/user/bookish-lamp_bk.sh
-3. Save it and quit
+   1. Edit crontab: ```crontab -u user -e```
+   2. Add the following line to your cronjob:
+	```* * * * * /home/user/bookish-lamp_bk.sh```
+   3. Save it and quit
 
 
 ###IV. bookish-lamp_sqlitefix.sh
@@ -80,10 +80,10 @@ for the db file and fix it once it got corrupted.
 
 You can run it manually after you made sure it is executable (chmod +x bookish-lamp_sqlitefix.sh) or add
 to cron:
-1. Edit crontab: crontab -u user -e
-2. Add the following line to your cronjob to run the script every day @5am:
-        0 5 1 * * /home/user/bookish-lamp_bk.sh
-3. Save it and quit
+   1. Edit crontab: ```crontab -u user -e```
+   2. Add the following line to your cronjob to run the script every day @5am:
+        ```0 5 1 * * /home/user/bookish-lamp_bk.sh```
+   3. Save it and quit
 
 ###Known bugs
 
