@@ -77,14 +77,28 @@ You can run it manually - not much fun in that - or add to cron like this:
 Sqlitefix is a special case. I work with a lot of embeded solutions and embeded db which is not as durable
 as a DBMS and a poorly scheduled power cycle can cause some massive troubles. Sqlitefix is looking out
 for the db file and fix it once it got corrupted.
+Running this script on Arch and Arch based  systems, check Known issues for more info.
 
 You can run it manually after you made sure it is executable (chmod +x bookish-lamp_sqlitefix.sh) or add
 to cron:
-   1. Edit crontab: ```crontab -u user -e```
+   1. Make sure sqlite3 is installed (```aptitude install sqlite3``` or ```dnf install sqlite3``` or ```pacman -S sqlite3```
+   2. Edit crontab: ```crontab -u user -e```
    2. Add the following line to your cronjob to run the script every day @5am:
         ```0 5 1 * * /home/user/bookish-lamp_bk.sh```
    3. Save it and quit
+   
 
-###Known bugs
+###Known issues
+
+* bookish-lamp_sqlitefix.sh can fail to perform on Debian based systems with error message "too many options" from sqlite3. In this case you need to create a file where you store the "dot" commands and called the commands from file with sqlite3. To get it working you need to: 
+
+   1. Create a new file next to the ```bookish-lamp_sqlitefix.sh``` script: ```vim cmd.sp```
+   2. Add the following line by line and save it:	
+*.mode insert
+*.output stats.dump.sqlite
+*.dump
+   3. Modify the ```else``` line from ```else sqlite3 $st0 ".mode insert" ".output $st1" ".dump"``` to ```else sqlite3 $st0 < cmd.sq
+   4. Run/schedule, will work fine.
+   
 
 ###What's next?
