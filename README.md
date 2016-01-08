@@ -93,11 +93,14 @@ to cron:
 * bookish-lamp_sqlitefix.sh can fail to perform on Debian based systems with error message "too many options" from sqlite3. In this case you need to create a file where you store the "dot" commands and called the commands from file with sqlite3. To get it working you need to: 
 
    1. Create a new file next to the ```bookish-lamp_sqlitefix.sh``` script: ```vim cmd.sp```
-   2. Add the following line by line and save it:	
-*.mode insert
-*.output stats.dump.sqlite
-*.dump
-   3. Modify the ```else``` line from ```else sqlite3 $st0 ".mode insert" ".output $st1" ".dump"``` to ```else sqlite3 $st0 < cmd.sq
+   2. Add the following line by line and save it:   
+	``` 
+	.mode insert 
+	.output stats.dump.sqlite 
+	.dump
+	```
+
+   3. Modify the ```else``` line from ```else sqlite3 $st0 ".mode insert" ".output $st1" ".dump"``` to ```else sqlite3 $st0 < cmd.sq```
    4. Run/schedule, will work fine.
    
 
