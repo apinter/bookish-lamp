@@ -6,7 +6,7 @@
 ed -s /etc/sysctl.conf << 'EOF'
 $a
 vm.swappiness=10
-vm.vfs_cache_pressure = 50
+vm.vfs_cache_pressure=50
 .
 w
 EOF
