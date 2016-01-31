@@ -36,4 +36,28 @@ GATEWAY=192.168.1.1
 # vi /etc/resolv.conf
 
 nameserver 8.8.8.8      # Replace with your nameserver ip
-nameserver 192.168.1.1  # Replace with your nameserver ip
+nameserver 8.8.4.4  # Replace with your nameserver ip
+
+###############################################################
+SET HOSTNAME
+###############################################################
+
+vim /etc/hosts
+vim /etc/hostname
+
+###############################################################
+ENABLE X11FORWARDING VIA SSH
+###############################################################
+
+vim /etc/ssh/sshd_config
+
+verify that the following options are set to yes 
+```bash
+AllowTcpForwarding 
+X11UseLocalhost 
+```
+Also
+```
+X11DisplayOffset is set to 10
+X11Forwarding to yes
+```
