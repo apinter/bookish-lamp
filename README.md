@@ -1,6 +1,6 @@
 #BOOKISH-LAMP
 
-#Licensing Information: READ LICENSE
+#Licensing Information: UNLICENSE (READ LICENSE)
 
 Project scource available here: https://github.com/apinter/bookish-lamp.git
 
