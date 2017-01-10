@@ -218,9 +218,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 #Screenshot
 # scrot - root
-bindsym Print exec scrot -e 'mv $f /home/apinter/Pictures/Screenshot/'
+bindsym --release Print exec scrot -e 'mv $f /home/apinter/Pictures/Screenshot/'
 # scrot - select window or rectangle
-bindsym Mod1+Print exec scrot -s -e 'mv $f /home/apinter/Pictures/Screenshot/'
+bindsym --release Shift+Print exec scrot -s -e 'mv $f /home/apinter/Pictures/Screenshot/'
 
 #Wallpaper
 exec_always feh --bg-scale $wallpaper
