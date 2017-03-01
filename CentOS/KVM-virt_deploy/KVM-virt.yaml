@@ -1,0 +1,75 @@
+---
+# Modify hosts accordingly or run it on localhost
+ - hosts: 127.0.0.1
+   connect: localhost
+
+   tasks:
+   - name: Full system update
+     yum:
+       name: "*"
+       state: latest
+
+
+   - name: Installing required packages for KVM virtualization
+     yum:
+       name: {{ list }}
+       with_items:
+         - qemu-kvm
+         - libvirt
+         - libvirt-python
+         - libguestfs-tools
+         - virt-install
+         - virt-manager
+         - virt-viewer
+         - policycoreutils-python
+         - net-tools
+         - samba
+         - samba-client
+         - samba-common
+         - cifs-utils
+         - nfs-utils
+         - nfs-utils-lib
+         - portmap
+
+   - name: Enable necessary services
+     systemd:
+       name: libvirtd
+       state: started
+       enabled: True
+
+   - name: Creating br0 interface
+     copy:
+       src: default/ifcg-br0
+       dest: /etc/sysconfig/network-scripts/
+       owner: root
+       group: root
+       backup: yes
+
+   - name: Configuring em1 interface for bridge
+     copy:
+       src: default/ifcfg-em1
+       dest: /etc/sysconfig/network-scripts/
+       owner: root
+       group: root
+       backup: yes
+
+   - name: Enable network forwarding
+     copy:
+       src: default/sysctl.conf
+       dest: /etc/sysctl.conf
+       owner: root
+       group: root
+       backup: yes
+
+   - name: Restart network
+     systemd:
+       name: network
+       state: restarted
+
+   - name: Creating folder structure for VMs
+     file:
+       path: /home/VMs
+       state: directory
+
+   - name: SELinux configuration
+     shell: default/selinux-vms.sh
